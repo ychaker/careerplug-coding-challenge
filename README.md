@@ -33,6 +33,7 @@ These are the basic requirements of the challenge. If you are able to get all of
 Some examples of extensions you add may be:
   - Displaying a human readable created at date for a `Post`
   - Adding a `Tag` model that can be associated to a `Post` with the ability to search by `Tag`
+  - Write basic test for your features
   - Adding a `User` model with basic authentication and an association to `Post`
   - Any other functionality that you can think of!
 
@@ -49,7 +50,7 @@ This project has been created with the `--webpack=react` flag. What this means i
 You will also need [Node.js](https://nodejs.org) to take advantage of the Javascript features. If you do not have Node installed already you can download the installer for your operating system [here](https://nodejs.org/en/download/)
 
 ## Rails setup
-If you've never installed Ruby / Rails on your machine before that is ok. If you are developing on a Mac, the wonderful people at [thoughtbot](https://thoughtbot.com/) have graciously created a script that does most of the work for you which you can find [here](https://github.com/thoughtbot/laptop)
+If you've never installed Ruby / Rails on your machine before that is ok. If you are developing on a Mac, the team at [thoughtbot](https://thoughtbot.com/) has created a script that does most of the work for you which you can find [here](https://github.com/thoughtbot/laptop)
 
 If you are developing on Linux or Windows, you may have a more difficult journey ahead of you, though the following resources should help you on your way:
 Windows - [Pragmatic Studio](https://pragmaticstudio.com/blog/2010/09/23/install-rails-ruby-windows) / [treehouse](http://blog.teamtreehouse.com/installing-rails-5-windows)
