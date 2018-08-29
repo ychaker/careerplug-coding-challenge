@@ -47,7 +47,7 @@ This is to provide you with some basic setup so you are not starting from absolu
 ## Using Javascript
 This project has been created with the `--webpack=react` flag. What this means is that you have the ability to write React code in your views pretty easily. This is not a requirement; however, if you would like to use this functionality, you are more than welcome to do so. On a side note - Rails also offers the ability to create a new project with a standard Webpack config for Angular and Vue.js as well. If you are interested in using one of these frameworks, feel free to do so. [Here](https://medium.com/@hpux/rails-5-1-loves-javascript-a1d84d5318b) is a good article with some helpful advice on how to take advantage of this approach.
 
-You will also need [Node.js](https://nodejs.org) to take advantage of the Javascript features. If you do not have Node installed already, you can download the installer for your operating system [here](https://nodejs.org/en/download/)
+You will also need [Node.js](https://nodejs.org) to take advantage of the Javascript features. If you do not have Node installed already, you can download the installer for your operating system [here](https://nodejs.org/en/download/).
 
 ## Rails Setup
 If you've never installed Ruby / Rails on your machine before, that is ok. If you are developing on a Mac, the team at [thoughtbot](https://thoughtbot.com/) has created a script that does most of the work for you which you can find [here](https://github.com/thoughtbot/laptop).
