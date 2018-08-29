@@ -56,6 +56,8 @@ If you are developing on Linux or Windows, you may have a more difficult journey
 Windows - [Pragmatic Studio](https://pragmaticstudio.com/blog/2010/09/23/install-rails-ruby-windows) / [treehouse](http://blog.teamtreehouse.com/installing-rails-5-windows)
 Linux - [treehouse](http://blog.teamtreehouse.com/installing-rails-5-linux)
 
+In all of the above tutorials, consider that this project was created with Rails 5.1.4, so you should make sure you install the same version.
+
 Setup time does not count toward your total time to complete the challenge. If you have any issues whatsoever, please do not hesitate to contact us and we can assist / find alternatives to help you complete the challenge. Environment setup can be difficult and this is not the skill set we are looking to evaluate.
 
 ## Mockups
