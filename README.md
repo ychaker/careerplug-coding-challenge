@@ -26,7 +26,7 @@ Below are some more specific instructions about the expected flow of the applica
   - All of the `Post` `Comments` should be listed here
   - You should also be able to add new `Comments`
     - You should be able to _edit_ and _delete_ each existing comment
-    - How you choose to implement _editing_ and _deletion_ of comments is up to you. If you want to send an `AJAX` request, and write some javascript to handle updates, that is fine; you can also wire it up in a more standard `Rails` way and have it do a full page turn.
+    - How you choose to implement _editing_ and _deletion_ of comments is up to you. If you want to send an `AJAX` request, and write some javascript to handle updates, that is fine; you can also wire it up in a more standard `Rails` way and have it do a full page turn. For that matter, if you choose to implement the entire front end in javascript and use Rails as an API server, that is also just fine.
 
 These are the basic requirements of the challenge. If you are able to get all of this functionality completed you will be in a pretty good spot. Of course, there is much more you can do with this challenge. If there is additional functionality that you would like to add, please feel free to do so. We would, however, prefer a sound, limited app over a full-featured app that is more rough around the edges.
 
@@ -45,7 +45,7 @@ This project comes with some starter code to help you along. We have provided th
 This is to provide you with some basic setup so you are not starting from absolutely nothing. There have also been some comments added to point you in the direction of helpful documentation.
 
 ## Using Javascript
-This project has been created with the `--webpack=react` flag. What this means is that you have the ability to write React code in your views pretty easily. This is not a requirement; however, if you would like to use this functionality, you are more than welcome to do so. On a side note - Rails also offers the ability to create a new project with a standard Webpack config for Angular and Vue.js as well. If you are interested in using one of these frameworks, feel free to do so. [Here](https://medium.com/@hpux/rails-5-1-loves-javascript-a1d84d5318b) is a good article with some helpful advice on how to take advantage of this approach.
+This project has been created with the `--webpack=react` flag. What this means is that you have the ability to write React code in your views pretty easily. This is not a requirement; however, if you would like to use this functionality, you are more than welcome to do so. On a side note - Rails also offers the ability to create a new project with a standard webpack config for Elm, Angular and Vue.js as well. If you are interested in using one of these frameworks, feel free to do so. [Here](https://medium.com/@hpux/rails-5-1-loves-javascript-a1d84d5318b) is a good article with some helpful advice on how to take advantage of this approach. [Here](https://github.com/rails/webpacker) is the project README with more examples.
 
 You will also need [Node.js](https://nodejs.org) to take advantage of the Javascript features. If you do not have Node installed already, you can download the installer for your operating system [here](https://nodejs.org/en/download/).
 
@@ -55,6 +55,8 @@ If you've never installed Ruby / Rails on your machine before, that is ok. If yo
 If you are developing on Linux or Windows, you may have a more difficult journey ahead of you, though the following resources should help you on your way:
 Windows - [Pragmatic Studio](https://pragmaticstudio.com/blog/2010/09/23/install-rails-ruby-windows) / [treehouse](http://blog.teamtreehouse.com/installing-rails-5-windows)
 Linux - [treehouse](http://blog.teamtreehouse.com/installing-rails-5-linux)
+
+In all of the above tutorials, consider that this project was created with Rails 5.1.4, so you should make sure you install the same version.
 
 Setup time does not count toward your total time to complete the challenge. If you have any issues whatsoever, please do not hesitate to contact us and we can assist / find alternatives to help you complete the challenge. Environment setup can be difficult and this is not the skill set we are looking to evaluate.
 
