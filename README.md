@@ -37,7 +37,10 @@ Some examples of extensions you might add:
   - Adding a `User` model with basic authentication and an association to `Post`
   - Any other functionality that you can think of!
 
-Be sure to comment your code so we can see that you understand what is going on, especially if you use scaffolding to generate resources!
+Be sure to comment your code so we can see that you understand what is going on.
+
+#### A note on Scaffolding
+Scaffolding can be a very useful tool when creating a Rails project. However, for the purposes of this exercise we would ask that you do not leverage the feature.
 
 ## Starter Code
 This project comes with some starter code to help you along. We have provided the skeleton for the `PostsController` and the `Post` model. Corresponding views have been created in the `app/views/posts` directory, as well as routes in the `config/routes.rb` file and migrations in the `db/migrate` directory.
