@@ -1,0 +1,10 @@
+<h1><%= link_to post.title, post %></h1>
+
+<!-- Luckily Rails handles JS and SQL injections for us -->
+<% if local_assigns[:full] || post.body.length < 256 %>
+  <div class="trix-content"><%=raw post.body %></div>
+<% else %>
+  <div class="trix-content">
+    <%=raw truncate(strip_tags(post.body), length: 255) %>
+  </div>
+<% end %>
