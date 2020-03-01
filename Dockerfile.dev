@@ -1,0 +1,88 @@
+FROM ruby:2.5.0
+
+MAINTAINER Bear & Giraffe <ops@bearandgiraffe.com>
+
+# Must have packages
+RUN apt-get update -qq && apt-get install -y vim curl git tmux tar file xz-utils build-essential
+
+# Install ImageMagick
+
+RUN wget https://www.imagemagick.org/download/ImageMagick.tar.gz && \
+    tar xvzf ImageMagick.tar.gz
+
+RUN cd ImageMagick-7*       && \
+    autoconf                && \
+    ./configure             && \
+    make                    && \
+    make install            && \
+    ldconfig /usr/local/lib && \
+    cd ..                   && \
+    rm -rf ImageMagick-*    && \
+    rm -rf ImageMagick.tar.gz
+
+# Install yarn and node
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get install -y nodejs
+RUN apt-get update && apt-get install -y yarn
+
+# Install PhantomJS
+RUN apt-get update                              \
+  && apt-get install -y --no-install-recommends \
+    ca-certificates                             \
+    bzip2                                       \
+    libfontconfig                               \
+  && apt-get clean                              \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update                                      \
+  && apt-get install -y --no-install-recommends         \
+    curl                                                \
+  && mkdir /tmp/phantomjs                               \
+  && curl -L                                            \
+    https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2  \
+    | tar -xj --strip-components=1 -C /tmp/phantomjs    \
+  && cd /tmp/phantomjs                                  \
+  && mv bin/phantomjs /usr/local/bin                    \
+  && cd                                                 \
+  && apt-get clean                                      \
+  && rm -rf /tmp/* /var/lib/apt/lists/*
+
+# Install Heroku CLI
+RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+# Clean environment
+RUN apt-get clean all
+
+RUN echo $'                                   \n\
+                                              \n\
+# Colorized '"'"'ls'"'"'                      \n\
+export LS_OPTIONS='"'"'--color=auto'"'"'      \n\
+eval "`dircolors`"                            \n\
+alias ls='"'"'ls $LS_OPTIONS'"'"'             \n\
+alias ll='"'"'ls $LS_OPTIONS -l'"'"'          \n\
+alias l='"'"'ls $LS_OPTIONS -lA'"'"'          \n\
+                                              \n\
+# Bundle shortcuts                            \n\
+alias be='"'"'bundle exec'"'"'                \n\
+alias bi='"'"'bundle install'"'"'             \n\
+alias bis='"'"'bundle install --binstubs'"'"' \n\
+alias bx='"'"'bundle exec'"'"'                \n\
+alias bo='"'"'bundle open'"'"'                \n\
+alias bs='"'"'bundle show'"'"'                \n\
+alias bu='"'"'bundle update'"'"'              \n\
+                                              \n\
+# Test shortcuts                              \n\
+alias bspec='"'"'bundle exec rspec'"'"'       \n\
+alias bcuc='"'"'bundle exec cucumber'"'"'     \n\
+'                                               \
+>> /root/.bashrc
+
+COPY . /srv/app
+WORKDIR /srv/app
+
+RUN bundle install
+
+CMD bin/server

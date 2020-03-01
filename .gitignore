@@ -26,3 +26,14 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+/public/system
+/coverage/
+test/reports/
+*.orig
+rerun.txt
+pickle-email-*.html
+.DS_Store
+
+# dotenv
+.env
