@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'activerecord-postgis-adapter'
 gem 'dotenv-rails', '~> 2.2.1'
+gem 'kaminari'
+gem 'pg_search'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'trix-rails', require: 'trix'
 

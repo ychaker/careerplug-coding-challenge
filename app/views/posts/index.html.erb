@@ -1,1 +1,9 @@
+<%= form_tag posts_path, method: :get do %>
+  <%= text_field_tag :q, params[:q], placeholder: 'Type search term' %>
+  <%= submit_tag 'Search', class: 'btn btn-primary' %>
+  <%= link_to 'Clear', posts_path, class: 'btn btn-default' %>
+<% end %>
+
 <%= render(@posts) || 'There are 0 posts, why not start by creating one?' %>
+
+<%= paginate @posts %>
