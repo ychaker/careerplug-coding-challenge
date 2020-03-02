@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
     # Then ultimately paginate
     @posts = @posts.page params[:page]
+    @posts = @posts.per params[:per_page] if params[:per_page]
   end
 
   def new

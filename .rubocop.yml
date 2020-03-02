@@ -7,6 +7,7 @@ AllCops:
     - bin/**/*
     - vendor/**/*
     - node_modules/**/*
+    - lib/tasks/auto_annotate_models.rake
     - lib/templates/rails/jbuilder/index.json.jbuilder
     - lib/railgun/mailer_decorator.rb
     - config/initializers/simple_form.rb

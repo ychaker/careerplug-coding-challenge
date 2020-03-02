@@ -1,0 +1,10 @@
+<%= simple_form_for post do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+  <%= f.input :body, as: :trix_editor %>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Create Post', class: 'btn btn-primary' %>
+  </div>
+<% end %>

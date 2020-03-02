@@ -1,12 +1,1 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.error_notification %>
-
-  <div class="row">
-    <%= f.input :title %>
-    <%= f.input :body, as: :trix_editor %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, 'Create Post', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<%= render 'form', post: @post %>

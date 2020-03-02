@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -13,31 +15,9 @@
 #  index_posts_on_body   (body)
 #  index_posts_on_title  (title)
 #
-
-one:
-  title: one
-  body:  one
-
-two:
-  title: two
-  body:  two
-
-three:
-  title: three
-  body:  three
-
-four:
-  title: four
-  body:  four
-
-five:
-  title: five
-  body:  five
-
-six:
-  title: six
-  body:  six
-
-filter_me:
-  title: filter_me
-  body:  filter_me
+FactoryBot.define do
+  factory :post do
+    title { Faker::Lorem.sentence }
+    body  { Faker::Lorem.paragraphs(number: 40) }
+  end
+end
