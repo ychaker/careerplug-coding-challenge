@@ -1,0 +1,12 @@
+en:
+  posts:
+    form:
+      create: Create Post
+    index:
+      clear:  Clear
+      empty:  There are 0 matching posts. Why not create one?
+      search: Search
+      search_placeholder: Type your search term
+    show:
+      delete: Delete Post
+      sure:   Are you sure?
