@@ -4,11 +4,12 @@
 #
 # Table name: posts
 #
-#  id         :bigint           not null, primary key
-#  body       :text             not null
-#  title      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id             :bigint           not null, primary key
+#  body           :text             not null
+#  comments_count :integer          default("0")
+#  title          :string           not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 # Indexes
 #
@@ -31,4 +32,8 @@ class Post < ApplicationRecord
 
   validates :body,
             presence: true
+
+  # Associations
+  has_many :comments,
+           dependent: :destroy
 end

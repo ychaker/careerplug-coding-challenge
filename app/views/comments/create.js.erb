@@ -1,0 +1,9 @@
+$('#alerts').html("<%= j render 'alerts' %>");
+
+<% if @comment.valid? %>
+  $('#comments-list').html("<%= j render partial: 'comments/comment', collection: @post.comments, spacer_template: 'spacer_line' %>");
+
+  $('#new-comment').html("<%= j render partial: 'comments/form', locals: { comment: @post.comments.build } %>");
+<% else %>
+  $('#new-comment').html("<%= j render partial: 'comments/form', locals: { comment: @comment } %>");
+<% end %>

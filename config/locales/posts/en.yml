@@ -2,6 +2,8 @@ en:
   posts:
     form:
       create: Create Post
+    post:
+      comments: Comments (%{count})
     index:
       clear:  Clear
       empty:  There are 0 matching posts. Why not create one?
@@ -10,3 +12,12 @@ en:
     show:
       delete: Delete Post
       sure:   Are you sure?
+      empty_comments_html: |
+        <div class="my-2 text-center">
+          No comments to show, add a new one!
+        </div>
+    create:
+      success: Post created successfully!
+      error:   Unable to create post!
+    destroy:
+      success: Post removed successfully!

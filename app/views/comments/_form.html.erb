@@ -1,0 +1,16 @@
+<%= simple_form_for [comment.post, comment], remote: true do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :body, as: :trix_editor, label: false %>
+  <% if comment.errors[:body].count > 0 %>
+    <div class="text-danger">
+      <% comment.errors[:body].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('.button'), class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>

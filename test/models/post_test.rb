@@ -4,11 +4,12 @@
 #
 # Table name: posts
 #
-#  id         :bigint           not null, primary key
-#  body       :text             not null
-#  title      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id             :bigint           not null, primary key
+#  body           :text             not null
+#  comments_count :integer          default("0")
+#  title          :string           not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 # Indexes
 #
@@ -51,6 +52,34 @@ class PostTest < ActiveSupport::TestCase
       posts = Post.search_by_title_and_body(q)
 
       assert_equal 0, posts.count
+    end
+  end
+
+  describe 'comments' do
+    subject { create(:post) }
+
+    it 'can have many comments' do
+      assert_must have_many(:comments), subject
+    end
+
+    it 'deletes the associates comments when deleted' do
+      2.times do
+        create(:comment, post: subject)
+      end
+
+      assert_difference 'Comment.count', -2 do
+        subject.destroy
+      end
+    end
+
+    it 'keeps a count of the number of comments' do
+      assert_equal 0, subject.comments_count
+
+      2.times do
+        create(:comment, post: subject)
+      end
+
+      assert_equal 2, subject.comments_count
     end
   end
 end

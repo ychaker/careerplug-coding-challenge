@@ -38,7 +38,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comment = @post.comments.build
+  end
 
   def destroy
     @post.destroy
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
   end
 
   def post_params

@@ -14,3 +14,15 @@
 <div class="clearfix"></div>
 
 <hr>
+
+<div class="my-4">
+  <h2><%= t('.comments') %></h2>
+
+  <div id="new-comment" class="my-2">
+    <%= render partial: 'comments/form', locals: { comment: @comment } %>
+  </div>
+
+  <div id="comments-list" class="my-2">
+    <%= render(partial: @post.comments - [ @comment ], spacer_template: 'spacer_line') || t('.empty_comments_html') %>
+  </div>
+</div>

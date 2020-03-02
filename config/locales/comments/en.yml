@@ -1,0 +1,12 @@
+en:
+  comments:
+    form:
+      button: Post Comment
+    comment:
+      delete: Delete Comment
+      sure:   Are you sure?
+    create:
+      success: Comment added successfully!
+      error:   Unable to add comment!
+    destroy:
+      success: Comment removed successfully!
