@@ -30,10 +30,18 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'activerecord-postgis-adapter'
 gem 'dotenv-rails', '~> 2.2.1'
+gem 'kaminari'
+gem 'pg_search'
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 gem 'trix-rails', require: 'trix'
 
 group :development, :test do
+  gem 'annotate'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'foreman', '~> 0.84.0', require: false
+
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -45,12 +53,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'annotate'
-  gem 'database_cleaner'
-  gem 'factory_bot_rails', require: false
-  gem 'faker'
-  gem 'foreman', '~> 0.84.0', require: false
-
   # Access an IRB console on exception pages or by using <%= console %>
   # anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -66,9 +68,12 @@ group :test do
   gem 'minitest-around', require: false
   gem 'minitest-bang', require: false
   gem 'minitest-hooks'
+  gem 'minitest-matchers_vaccine'
   gem 'minitest-reporters', '>= 0.5.0'
   gem 'minitest-test_profile', require: false
   gem 'mocha'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
 

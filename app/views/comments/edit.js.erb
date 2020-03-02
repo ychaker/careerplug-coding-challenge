@@ -1,0 +1,3 @@
+// Replace the text of the comment with the form, in order to be
+// able to update it in place.
+$("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/form', locals: { comment: @comment } %>");

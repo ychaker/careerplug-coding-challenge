@@ -1,0 +1,15 @@
+// Update the alerts section to display the notification message.
+$('#alerts').html("<%= j render 'alerts' %>");
+
+<% if @comment.valid? %>
+  // If the comment saves successfully, update the list to display
+  // the new comment.
+  $('#comments-list').html("<%= j render partial: 'comments/comment', collection: @post.comments, spacer_template: 'spacer_line' %>");
+
+  // Clear out the new comment form.
+  $('#new-comment').html("<%= j render partial: 'comments/form', locals: { comment: @post.comments.build } %>");
+<% else %>
+  // If the comment does not save successfully update the form to show
+  // the errors.
+  $('#new-comment').html("<%= j render partial: 'comments/form', locals: { comment: @comment } %>");
+<% end %>

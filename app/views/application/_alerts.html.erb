@@ -1,0 +1,13 @@
+<% flash.each do |type, message| %>
+  <% unless type.to_s == :timedout.to_s %>
+  <div class="alert rounded m-4 <%= alert_class_for(type) %> alert-dismissable fade show">
+    <button
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-hidden="true"
+    >&times;</button>
+    <%= message %>
+  </div>
+  <% end %>
+<% end %>

@@ -1,1 +1,25 @@
-<!-- View for showing all `Post` -->
+<%= form_tag posts_path, method: :get do %>
+  <div class="input-group my-2">
+    <%= text_field_tag :q,
+      params[:q],
+      placeholder: t('.search_placeholder'),
+      class: 'form-control',
+      aria: {
+        describedby: 'search-btn'
+      } %>
+
+    <div class="input-group-append">
+      <%= submit_tag t('.search'),
+        class: 'btn btn-outline-secondary',
+        id: 'search-btn' %>
+    </div>
+
+    <%= link_to t('.clear'), posts_path, class: 'btn btn-light ml-1' %>
+  </div>
+<% end %>
+
+<%= render(partial: @posts, spacer_template: 'spacer_line') || t('.empty') %>
+
+<div class="d-flex justify-content-center my-4">
+  <%= paginate @posts %>
+</div>

@@ -19,7 +19,8 @@ module CodeingChallenge
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    locales_path = %w[config locales ** *.{rb,yml}]
-    config.i18n.load_path += Dir[Rails.root.join(locales_path.join(', '))]
+    # rubocop:disable Rails/FilePath
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    # rubocop:enable Rails/FilePath
   end
 end

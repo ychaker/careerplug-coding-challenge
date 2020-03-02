@@ -1,0 +1,22 @@
+<section id="<%= dom_id post %>">
+  <h1><%= link_to post.title, post %></h1>
+
+  <div class="trix-content">
+    <!-- Luckily Rails handles JS and SQL injections for us -->
+    <% if post.body.length < 256 %>
+      <%=raw post.body %>
+    <% else %>
+      <%=raw truncate(strip_tags(post.body), length: 255) %>
+    <% end %>
+  </div>
+
+  <div class="my-2 d-flex align-items-end">
+    <div>
+      <em>Last updated <%= time_ago_in_words post.updated_at %> ago</em>
+    </div>
+
+    <div class="ml-auto">
+      <%= link_to t('.comments', count: post.comments_count), post %>
+    </div>
+  </div>
+</section>

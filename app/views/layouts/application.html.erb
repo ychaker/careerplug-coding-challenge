@@ -9,6 +9,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'header' %>
+
+    <div id="alerts" class="">
+      <%= render 'alerts' %>
+    </div>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

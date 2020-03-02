@@ -1,0 +1,25 @@
+<section id="<%= dom_id comment %>">
+  <div class="trix-content">
+    <%=raw comment.body %>
+  </div>
+
+  <div class="my-2 d-flex align-items-end">
+    <div class="comment-date">
+      <em>Last updated <%= time_ago_in_words comment.updated_at %> ago</em>
+    </div>
+
+    <div class="comment-actions ml-auto">
+      <%= link_to t('.edit'),
+                  edit_post_comment_path(comment.post, comment),
+                  remote: true,
+                  class: 'btn btn-primary' %>
+
+      <%= link_to t('.delete'),
+                  [comment.post, comment],
+                  data: { confirm: t('.sure') },
+                  method: :delete,
+                  remote: true,
+                  class: 'btn btn-danger' %>
+    </div>
+  </div>
+</section>

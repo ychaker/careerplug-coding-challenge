@@ -1,0 +1,8 @@
+// Update the alerts section to display the notification message.
+$('#alerts').html("<%= j render 'alerts' %>");
+
+// Update the list of comments to reflect the changes.
+$('#comments-list').html("<%= j render partial: 'comments/comment', collection: @post.comments, spacer_template: 'spacer_line' %>");
+
+// Clear out the new comment form, just in case.
+$('#new-comment').html("<%= j render partial: 'comments/form', locals: { comment: @post.comments.build } %>");

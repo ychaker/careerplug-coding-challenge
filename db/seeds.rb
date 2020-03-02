@@ -10,3 +10,14 @@
 #     { name: 'Star Wars' }, { name: 'Lord of the Rings' }
 #   ])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+100.times do
+  post = Post.new
+  post.title = Faker::Lorem.sentence
+  post.body  = Faker::Lorem.paragraphs(number: 40)
+    .map { |e| "<div>#{e}</div>" }
+    .join
+
+  post.save!
+end
