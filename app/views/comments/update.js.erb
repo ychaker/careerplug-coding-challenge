@@ -1,7 +1,12 @@
+// Update the alerts section to display the notification message,
 $('#alerts').html("<%= j render 'alerts' %>");
 
 <% if @comment.valid? %>
-   $("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/comment', locals: { comment: @comment } %>");
- <% else %>
+  // If the comment updates successfully, update the section in the list
+  // to show the new comment instead of the form.
+  $("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/comment', locals: { comment: @comment } %>");
+<% else %>
+  // If the comment does not update successfully update the form to show
+  // the errors.
   $("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/form', locals: { comment: @comment } %>");
 <% end %>
