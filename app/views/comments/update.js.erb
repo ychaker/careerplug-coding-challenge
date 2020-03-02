@@ -1,0 +1,7 @@
+$('#alerts').html("<%= j render 'alerts' %>");
+
+<% if @comment.valid? %>
+   $("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/comment', locals: { comment: @comment } %>");
+ <% else %>
+  $("#comment_<%= @comment.id %>").html("<%= j render partial: 'comments/form', locals: { comment: @comment } %>");
+<% end %>

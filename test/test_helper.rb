@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
+
+SimpleCov.start do
+  add_filter 'test/'
+end
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -12,7 +15,8 @@ Dir[Rails.root.join('test/support/**/*.rb')].sort.each { |f| require f }
 
 reporter_options = { color: true, slow_count: 5 }
 Minitest::Reporters.use! [
-  Minitest::Reporters::DefaultReporter.new(reporter_options)
+  Minitest::Reporters::SpecReporter.new(reporter_options),
+  Minitest::Reporters::MeanTimeReporter.new(reporter_options)
 ]
 
 module ActiveSupport

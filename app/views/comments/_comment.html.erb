@@ -9,6 +9,11 @@
     </div>
 
     <div class="comment-actions ml-auto">
+      <%= link_to t('.edit'),
+                  edit_post_comment_path(comment.post, comment),
+                  remote: true,
+                  class: 'btn btn-primary' %>
+
       <%= link_to t('.delete'),
                   [comment.post, comment],
                   data: { confirm: t('.sure') },

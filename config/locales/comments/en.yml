@@ -3,10 +3,14 @@ en:
     form:
       button: Post Comment
     comment:
+      edit:   Edit Comment
       delete: Delete Comment
       sure:   Are you sure?
     create:
       success: Comment added successfully!
       error:   Unable to add comment!
+    update:
+      success: Comment updated successfully!
+      error:   Unable to update comment!
     destroy:
       success: Comment removed successfully!

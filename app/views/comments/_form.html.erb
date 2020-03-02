@@ -1,7 +1,9 @@
 <%= simple_form_for [comment.post, comment], remote: true do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :body, as: :trix_editor, label: false %>
+  <%= f.input :body, as: :hidden, label: false, input_html: { id: "#{dom_id(comment)}_body" } %>
+  <trix-editor input="<%= dom_id(comment) %>_body"></trix-editor>
+
   <% if comment.errors[:body].count > 0 %>
     <div class="text-danger">
       <% comment.errors[:body].each do |error| %>
